@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:UserEntry="clr-namespace:UserDataInfo"
+             x:Class="UserDataInfo.MainSqlPage" BackgroundColor="White" Title="Add More Users">
+
+    <StackLayout>
+       
+        <StackLayout Padding="10">
+            <Label Text="Name:" TextColor="Black" Margin="0,0,0,0"/>
+            <UserEntry:CustomEntry x:Name="name" Text=""  TextColor="Black" Placeholder="Name" PlaceholderColor="Gray" BackgroundColor="WhiteSmoke" />
+
+            <Label Text="Phone Number:" TextColor="Black" Margin="0,10,0,0" />
+            <UserEntry:CustomEntry x:Name="phone_Number" Text=""  TextColor="Black" Placeholder="Phone Number" PlaceholderColor="Gray" BackgroundColor="WhiteSmoke"/>
+
+            <Label Text="Email:" TextColor="Black" Margin="0,10,0,0" />
+            <UserEntry:CustomEntry x:Name="email" Text="" Placeholder="Email"  TextColor="Black" PlaceholderColor="Gray" BackgroundColor="WhiteSmoke"/>
+
+            <Label Text="Select a Date of Birth:" TextColor="Black" Margin="0,10,0,0"/>
+            <DatePicker x:Name="datePicker" BackgroundColor="WhiteSmoke" TextColor="Black" Format="D" Date="{Binding SelectedDate, Mode=TwoWay}" />
+
+            <Label Text="Upload Profile Picture:" TextColor="Black" Margin="0,10,0,0"/>
+            <StackLayout Padding="0" Orientation="Horizontal">
+                <!-- Display the selected profile image -->
+                <Frame Padding="02" BorderColor="Black" >
+                    <Image x:Name="ProfileImage"
+                       HeightRequest="80"
+                       WidthRequest="80"
+                       Aspect="AspectFill"
+                       VerticalOptions="Center" BackgroundColor="GhostWhite" Source=""/>
+                </Frame>
+
+                
+                <Button Text="Add Profile Picture"
+                        BackgroundColor="#2196F3"
+                        CornerRadius="10"
+                Clicked="OnSelectPictureClicked"
+                VerticalOptions="Center" />
+            </StackLayout>
+            <Button Text="Submit" BackgroundColor="#2196F3" Clicked="OnSubmitClicked" CornerRadius="10" Margin="0,20,0,0"/>
+            <Button Text="All Data Info" BackgroundColor="#2196F3" Clicked="Button_Clicked" CornerRadius="10" Margin="0,20,0,0"/>
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>

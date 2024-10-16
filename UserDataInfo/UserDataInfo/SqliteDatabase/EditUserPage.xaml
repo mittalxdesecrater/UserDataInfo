@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UserDataInfo.EditUserPage" BackgroundColor="White" Title="Edit Info">
+    <StackLayout Padding="10">
+
+        <StackLayout Padding="0" Orientation="Horizontal">
+            <!-- Display the selected profile image -->
+            <Frame Padding="02" BorderColor="Black" >
+                <Image x:Name="ProfileImage"
+                       Source="{Binding ProfilePicture}"
+           HeightRequest="80"
+           WidthRequest="80"
+           Aspect="AspectFill"
+           VerticalOptions="Center" BackgroundColor="GhostWhite"/>
+            </Frame>
+
+            <!-- Button to pick image -->
+            <Button Text="Add Profile Picture"
+            BackgroundColor="#2196F3"
+            CornerRadius="10"
+            Clicked="OnSelectPictureClicked"
+            VerticalOptions="Center" />
+        </StackLayout>
+
+        <Label Text="Name:" TextColor="Black" />
+        <Entry x:Name="nameEntry" TextColor="Black" />
+
+        <Label Text="Phone Number:" TextColor="Black" />
+        <Entry x:Name="phoneEntry" TextColor="Black" />
+
+        <Label Text="Email:" TextColor="Black" />
+        <Entry x:Name="emailEntry" TextColor="Black" />
+
+        <Label Text="Date of Birth:" TextColor="Black" />
+        <DatePicker x:Name="datePicker" TextColor="Black" />
+
+        <Button Text="Save" Clicked="OnSaveClicked" BackgroundColor="#2196F3" CornerRadius="10" Margin="0,20,0,0"/>
+        <Button Text="Delete" Clicked="OnDeleteClicked" BackgroundColor="#2196F3" CornerRadius="10" Margin="0,0,0,0"/>
+    </StackLayout>
+</ContentPage>
